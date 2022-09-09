@@ -5,7 +5,7 @@
  *
  * Return: always 0
  */
-int main(v0id)
+int main(void)
 {
 	int i, j, k;
 
