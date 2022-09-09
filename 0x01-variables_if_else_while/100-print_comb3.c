@@ -5,7 +5,7 @@
  *
  * Return: always 0
  */
-int main()
+int main(void)
 {
 	int i;
 	int j = -1;
@@ -16,14 +16,13 @@ int main()
 	for (count = 0 ; count < 10 ; count++)
 	{
 		j = j + 1;
-		for (i= 0 ; i < 10; i++)
+		for (i = 0 ; i < 10; i++)
 		{
-			
 			x = x + 1;
 
 			if (x == j)
 				continue;
-			if (x <= 9 )
+			if (x <= 9)
 			{
 				putchar(j + '0');
 				putchar(x + '0');
