@@ -12,7 +12,9 @@ int main(void)
 	long int b = 2;
 	long int c;
 	int i;
-	long long int sum = 0;
+	long int sum;
+
+	sum = 0;
 
 	sum = sum + b;
 
@@ -25,8 +27,8 @@ int main(void)
 			sum = sum + b;
 		if (b > 4000000)
 			break;
-		printf("%lld", sum);
 	}
+	printf("%ld", sum);
 	printf("\n");
 	return (0);
 }
