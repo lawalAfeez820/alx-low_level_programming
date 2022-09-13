@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  *print_times_table - print multiplication table
  *
@@ -17,17 +16,16 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				mul = i * j;
-				if (mul == (mul % 10))
+				if (mul == (mul % 10) && j == 0)
+					_putchar(mul + '0');
+				else if (mul == (mul % 10))
 				{
-					if (j == 0)
-						_putchar(mul + '0');
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
 					_putchar(' ');
 					_putchar(mul + '0');
 				}
-
 				else if (mul == (mul % 100))
 				{
 					_putchar(',');
