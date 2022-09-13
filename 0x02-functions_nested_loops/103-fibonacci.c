@@ -23,7 +23,7 @@ int main(void)
 		c = a;
 		a = b;
 		b = b + c;
-		if (i % 2 == 0)
+		if (b % 2 == 0)
 			sum = sum + b;
 		if (b > 4000000)
 			break;
