@@ -13,14 +13,14 @@ void print_number(int var)
 	if (var < 0)
 	{
 		_putchar('-');
-		var = - var;
+		var = -var;
 	}
 	print(var);
 }
 
 /**
  * print - subfunction for recursive printing
- * @ n: variable to be printed
+ * @n: variable to be printed
  * Return: none
  */
 void print(unsigned int n)
