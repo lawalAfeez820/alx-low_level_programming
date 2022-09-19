@@ -1,5 +1,6 @@
 #include "main.h"
 int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 
 /**
  * rev_string - reverse string
@@ -10,15 +11,11 @@ int _strlen(char *s);
  */
 void rev_string(char *s)
 {
-	int i, n, j;
+	int i, n;
 	int count = 0;
-	int len = _strlen(s);
-	char keep[len];
+	int *keep;
 
-	for (j = 0; j < _strlen(s); j++)
-	{
-		keep[i] = s[i];
-	}
+	_strcpy(keep, s);
 
 	n = _strlen(s) - 1;
 
@@ -46,4 +43,23 @@ int _strlen(char *s)
 	for (i = 0; s[i]; i++)
 		count = count + 1;
 	return (count);
+}
+
+
+/**
+ * _strcpy - copy string from one array to another
+ *@dest: where to copy to
+ * @src: where we are copying from
+ *
+ * Return: pointer
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; i <= _strlen(src); i++)
+	{
+		dest[i] = src[i];
+	}
+	return (dest);
 }
