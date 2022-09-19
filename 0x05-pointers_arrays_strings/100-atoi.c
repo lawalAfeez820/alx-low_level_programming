@@ -49,7 +49,9 @@ int _atoi(char *s)
     }
     if (track2 + 1 == _strlen(s))
         return (-1 * total);
-    else if (final == _strlen(s) + 1 && s[first-1] == '-' && first > 0)
+    else if (count == i && s[i - track2] == '-')
+        return (-1 * total);
+    else if (count == i && s[i - track2] == '+' && s[i - track2 - 1] == '-')
         return (-1 * total);
     else
         return (total);
