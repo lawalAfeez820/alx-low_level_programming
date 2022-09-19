@@ -47,7 +47,7 @@ int _atoi(char *s)
         total = total + ((s[k] - 48) * _pow(10,track));
         track = track - 1;
     }
-    //if (track2 + 1 == _strlen(s))
+    /*if (track2 + 1 == _strlen(s))*/
     if (s[0] == '-')
         return (-1 * total);
     else if (count == i && s[i - track2] == '-')
