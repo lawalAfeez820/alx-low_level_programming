@@ -30,15 +30,22 @@ int _atoi(char *s)
         if ( i > count && track > 0)
             break;
     }
-    first = count - track;
+    if (i > count)
+    {
+        first = i - track;
+    }
+    else if (i == count)
+    {
+        first = i - track + 1;
+    }
     final = count;
     track = track - 1;
-    for (k = first; k < final; k++)
+    for (k = first; k <= final; k++)
     {
         total = total + ((s[k] - 48) * _pow(10,track));
         track = track - 1;
     }
-    if (final == _strlen(s) && s[first-1] == 45 && first)
+    if (final == _strlen(s) + 1 && s[first-1] == 45 && first)
         return (-1 * total);
     else
         return (total);
