@@ -8,7 +8,7 @@
  * Author: Lawal Afeez
  * Return: An integer
  */
-int _strlen(char *s);
+int _strlen(char *s)
 {
 	int i;
 	int count = 0;
