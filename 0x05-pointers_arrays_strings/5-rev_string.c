@@ -13,7 +13,7 @@ void rev_string(char *s)
 {
 	int i, n;
 	int count = 0;
-	int *keep;
+	char *keep;
 
 	keep = _strcpy(keep, s);
 
