@@ -1,5 +1,5 @@
 #include "main.h"
-#include <math.h>
+int _pow(int a, int b);
 int _strlen(char *s);
 
 /**
@@ -55,6 +55,25 @@ int _strlen(char *s)
     for (i = 0; s[i]; i++)
         count = count + 1;
     return (count);
+}
+
+int _pow(int a, int b)
+{
+    int i;
+    int sum = a;
+    
+    if (b == 0)
+        return (1);
+    elif (b == 1)
+        return (a);
+    else
+    {
+        for (i = 1; i < b ; i++)
+        {
+                sum = sum * a;
+        }
+        return (sum);
+    }
 }
 
 
