@@ -15,7 +15,7 @@ void rev_string(char *s)
 	int count = 0;
 	int *keep;
 
-	_strcpy(keep, s);
+	keep = _strcpy(keep, s);
 
 	n = _strlen(s) - 1;
 
