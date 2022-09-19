@@ -16,7 +16,7 @@ int _atoi(char *s)
     int track = 0;
     int total = 0;
     int first;
-    int tract2;
+    int track2;
 
     if (_strlen(s) > 0)
     {
