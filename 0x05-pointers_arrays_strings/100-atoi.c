@@ -16,6 +16,7 @@ int _atoi(char *s)
     int track = 0;
     int total = 0;
     int first;
+    int tract2;
 
     if (_strlen(s) > 0)
     {
@@ -39,13 +40,16 @@ int _atoi(char *s)
         first = i - track + 1;
     }
     final = count;
+    track2 = track;
     track = track - 1;
     for (k = first; k <= final; k++)
     {
         total = total + ((s[k] - 48) * _pow(10,track));
         track = track - 1;
     }
-    if (final == _strlen(s) + 1 && s[first-1] == '-' && first > 0)
+    if (track2 + 1 == _strlen(s))
+        return (-1 * total);
+    else if (final == _strlen(s) + 1 && s[first-1] == '-' && first > 0)
         return (-1 * total);
     else
         return (total);
