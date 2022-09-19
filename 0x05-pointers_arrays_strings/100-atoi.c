@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 int _strlen(char *s);
 
 /**
@@ -29,11 +30,12 @@ int _atoi(char *s)
         if ( i > count && track > 0)
             break;
     }
-    first = count - track
+    first = count - track;
     final = count;
+    track = track - 1;
     for (k = first; k < final; k++)
     {
-        total = total + ((s[k] - 48) * 10**(track - 1));
+        total = total + ((s[k] - 48) * pow(10,track);
         track = track - 1;
     }
     if (final == _strlen(s) && s[first-1] == 45 && first)
