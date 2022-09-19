@@ -1,65 +1,25 @@
+#include <string.h>
 #include "main.h"
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
 
 /**
- * rev_string - reverse string
+ * rev_string - reverse a string
+ * @str: string to be reversed
  *
- * @s: string to be reversed
- *
- * Return: none
+ * Created by: Lawal Afeez
+ * cc: 19 Sept, 2022
  */
-void rev_string(char *s)
+
+void rev_string(char *str)
 {
-	int i, n;
-	int count = 0;
-	char *keep;
+	int i = strlen(str) - 1, j = 0;
+	char tmp;
 
-	keep = _strcpy(keep, s);
-
-	n = _strlen(s) - 1;
-
-	for (i = n; i >= 0; i--)
+	while (i > j)
 	{
-		*(s + count) = keep[i];
-		count = count + 1;
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i--;
+		j++;
 	}
-}
-
-
-/**
- * _strlen - lenght of string
- *
- * @s: pointer variable
- *
- * Author: Lawal Afeez
- * Return: An integer
- */
-int _strlen(char *s)
-{
-	int i;
-	int count = 0;
-
-	for (i = 0; s[i]; i++)
-		count = count + 1;
-	return (count);
-}
-
-
-/**
- * _strcpy - copy string from one array to another
- *@dest: where to copy to
- * @src: where we are copying from
- *
- * Return: pointer
- */
-char *_strcpy(char *dest, char *src)
-{
-	int i;
-
-	for (i = 0; i <= _strlen(src); i++)
-	{
-		dest[i] = src[i];
-	}
-	return (dest);
 }
