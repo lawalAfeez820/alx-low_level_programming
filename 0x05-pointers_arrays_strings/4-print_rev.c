@@ -19,18 +19,22 @@ void print_rev(char *s)
 	_putchar('\n');
 }
 
+
+
 /**
- * _strlen - strlength
- * @s: string to find it length
+ * _strlen - lenght of string
  *
- * Return: length of the string
+ * @s: pointer variable
+ *
+ * Author: Lawal Afeez
+ * Return: An integer
  */
 int _strlen(char *s)
 {
 	int i;
 	int count = 0;
 
-	for (i = 0; *(s + 1); i++)
-		count++;
+	for (i = 0; s[i]; i++)
+		count = count + 1;
 	return (count);
 }
