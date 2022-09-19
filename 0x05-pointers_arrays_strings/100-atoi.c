@@ -35,7 +35,7 @@ int _atoi(char *s)
     track = track - 1;
     for (k = first; k < final; k++)
     {
-        total = total + ((s[k] - 48) * pow(10,track));
+        total = total + ((s[k] - 48) * _pow(10,track));
         track = track - 1;
     }
     if (final == _strlen(s) && s[first-1] == 45 && first)
