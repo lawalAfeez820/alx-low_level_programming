@@ -45,7 +45,7 @@ int _atoi(char *s)
         total = total + ((s[k] - 48) * _pow(10,track));
         track = track - 1;
     }
-    if (final == _strlen(s) + 1 && s[first-1] == 45 && first)
+    if (final == _strlen(s) + 1 && s[first-1] == "-" && first)
         return (-1 * total);
     else
         return (total);
