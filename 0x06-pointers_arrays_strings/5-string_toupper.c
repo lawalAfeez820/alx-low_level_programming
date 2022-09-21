@@ -6,7 +6,7 @@
  * @s: the string to manipulate
  * Return: a pointer to the string
  */
-char *string_toupper(char *)
+char *string_toupper(char *s)
 {
 	int i;
 
