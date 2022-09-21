@@ -1,4 +1,6 @@
 #include "main.h"
+int pow(int a, int b);
+int powof(int n);
 
 /**
  *print_number - print numbers
