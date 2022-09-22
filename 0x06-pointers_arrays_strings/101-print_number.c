@@ -31,12 +31,12 @@ void print_number(int n)
 
 			j = n / _pow(10, i);
 			_putchar((j % 10) + '0');
-		}	
+		}
 	}
 }
 
 /**
- * pow - finding a raised to the power of b
+ * _pow - finding a raised to the power of b
  *
  * @a: the base
  * @b: the index
@@ -51,7 +51,7 @@ int _pow(int a, int b)
 		return (1);
 	else if (b == 1)
 		return (a);
-	else
+	else if (b > 1)
 	{
 		sum = a;
 		for (i = 1; i < b; i++)
