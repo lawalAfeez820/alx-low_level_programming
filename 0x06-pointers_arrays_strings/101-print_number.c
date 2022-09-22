@@ -51,15 +51,12 @@ int _pow(int a, int b)
 		return (1);
 	else if (b == 1)
 		return (a);
-	else if (b > 1)
+	sum = a;
+	for (i = 1; i < b; i++)
 	{
-		sum = a;
-		for (i = 1; i < b; i++)
-		{
-			sum = sum * a;
-		}
-		return (sum);
+		sum = sum * a;
 	}
+	return (sum);
 }
 
 /**
