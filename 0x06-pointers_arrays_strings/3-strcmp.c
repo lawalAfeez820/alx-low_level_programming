@@ -1,5 +1,8 @@
 #include "main.h"
 #include <string.h>
+int f_greater(char *s1, char *s2);
+int s_greater(char *s1, char *s2);
+int equal(char *s1, char *s2);
 
 /**
  * _strcmp - compare to string together
