@@ -9,14 +9,16 @@
  */
 char *cap_string(char *s)
 {
-	char d[] = {'\n', '\t', ' ', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	char d[] = {'\n', '\t', ' ', ',', ';', '.', '!', '?', '"', '(', ')',
+		'{', '}'};
 	int len = strlen(d);
+	int len_s = strlen(s);
 	int i, j;
 
-	for (i = 0; i < strlen(s); i++)
+	for (i = 0; i < len_s; i++)
 	{
 
-		if (i == strlen(s) - 1)
+		if (i == len_s - 1)
 			break;
 		for (j = 0; j < len; j++)
 		{
