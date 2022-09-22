@@ -42,7 +42,7 @@ int f_greater(char *s1, char *s2)
 	{
 		if (s2[i] > s1[i])
 		{
-			return (-1);
+			return (s1[i] - s2[i]);
 		}
 		else if (s2[i] == s1[i])
 		{
@@ -50,10 +50,10 @@ int f_greater(char *s1, char *s2)
 		}
 		else
 		{
-			return (1);
+			return (s2[i] - s1[i]);
 		}
 	}
-	return (1);
+	return (s2[i] - s1[i]);
 }
 
 /**
@@ -72,7 +72,7 @@ int s_greater(char *s1, char *s2)
 	{
 		if (s1[i] > s2[i])
 		{
-			return (1);
+			return (s1[i] - s2[i]);
 		}
 		else if (s1[i] == s2[i])
 		{
@@ -80,10 +80,10 @@ int s_greater(char *s1, char *s2)
 		}
 		else
 		{
-			return (-1);
+			return (s2[i] - s1[i]);
 		}
 	}
-	return (-1);
+	return (s2[i] - s1[i]);
 }
 
 /**
@@ -102,7 +102,7 @@ int equal(char *s1, char *s2)
 	{
 		if (s1[i] > s2[i])
 		{
-			return (1);
+			return (s1[i] - s2[i]);
 		}
 		else if (s1[i] == s2[i])
 		{
@@ -110,10 +110,10 @@ int equal(char *s1, char *s2)
 		}
 		else
 		{
-			return (-1);
+			return (s2[i] - s1[i]);
 		}
 	}
-	return (0);
+	return (s2[i] - s1[i]);
 }
 
 
