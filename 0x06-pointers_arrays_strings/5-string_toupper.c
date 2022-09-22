@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * string_toupper
+ * string_toupper - convert to upper case
  *
  * @s: the string to manipulate
  * Return: a pointer to the string
