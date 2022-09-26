@@ -14,7 +14,6 @@
 char *_strpbrk(char *s, char *accept)
 {
 	int i, j;
-	int count = 0;
 	char *p = NULL;
 
 	for (i = 0; s[i]; i++)
@@ -22,16 +21,9 @@ char *_strpbrk(char *s, char *accept)
 		for (j = 0; accept[j]; j++)
 		{
 			if (s[i] == accept[j])
-			{
-				count++;
-				break;
-			}
+				return (&s[i]);
 		}
-		break;
 	}
-	if (count == 0)
-		return (p);
-	p = &s[i];
 	return (p);
 }
 
