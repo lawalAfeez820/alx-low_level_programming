@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+#include <string.h>
 
 /**
  * _strspn - returns the length of the initial substring of the string
@@ -18,7 +18,9 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	int i, j;
-	int count = 0;
+	size_t count = 0;
+	int min = 0;
+	int max = 0;
 
 	for (i = 0; accept[i]; i++)
 	{
@@ -27,13 +29,18 @@ unsigned int _strspn(char *s, char *accept)
 			if (accept[i] == s[j])
 			{
 				count++;
-				break;
+				s[j] = '\n';
+				if (min > j)
+					min = j;
+				else if (j > max)
+					max = j;
 			}
 		}
-		break;
+
 	}
-	if (count == 0)
-		return;
-	return (&s[j]);
+	if (count == strlen(accept))
+		return (max - min);
+	return (0);
+}
 
 
