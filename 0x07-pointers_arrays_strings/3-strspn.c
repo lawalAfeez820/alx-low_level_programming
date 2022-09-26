@@ -1,46 +1,24 @@
 #include "main.h"
-#include <string.h>
-
 /**
- * _strspn - returns the length of the initial substring of the string
- *  pointed to by str1 that is made up of only those character
- *  contained in the string pointed to by str2.
- *
- * @s:string to be scanned
- * @accept:string containing the characters to match
- *
- * Return: This function
- * returns the number of characters
- * in the initial segment of str1
- * which consist only of characters
- * from str2.
+ * _strspn - gets the length of a prefix substring
+ * @s: segment to compare bytes from
+ * @accept: string of bytes to compare with
+ * Return: number of bytes in segment s which consist of bytes from accept
  */
+
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j;
-	size_t count = 0;
-	int min = 0;
-	int max = 0;
+	unsigned int i, j;
 
-	for (i = 0; accept[i]; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		for (j = 0; s[j]; j++)
-		{
-			if (accept[i] == s[j])
-			{
-				count++;
-				s[j] = '\n';
-				if (min > j)
-					min = j;
-				else if (j > max)
-					max = j;
-			}
-		}
-
+		j = 0;
+		while (accept[j] != '\0' && s[i] != accept[j])
+			j++;
+		if (accept[j] == '\0')
+			return (i);
+		i++;
 	}
-	if (count == strlen(accept))
-		return (max - min);
-	return (0);
+	return (i);
 }
-
-
