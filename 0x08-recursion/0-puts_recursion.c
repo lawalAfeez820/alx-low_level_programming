@@ -5,7 +5,7 @@
  *
  * @s: string to print out
  * Return void
- * 
+ *
  */
 void _puts_recursion(char *s)
 {
