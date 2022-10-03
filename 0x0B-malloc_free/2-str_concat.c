@@ -15,9 +15,19 @@ char *str_concat(char *s1, char *s2)
 	char *p;
 
 	if (s1 == NULL)
-		s1 = "";
+	{
+		p = s2;
+		return (p);
+	}
 	else if (s2 == NULL)
-		s2 = "";
+	{
+		p = s2;
+		return (p);
+	}
+	else if (s1 == NULL && s2 == NULL)
+	{
+		p = "";
+		return (p);
 
 	p = malloc(strlen(s1) + strlen(s2) + 1);
 
