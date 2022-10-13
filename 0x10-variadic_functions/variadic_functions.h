@@ -11,7 +11,7 @@ void print_s(va_list s);
 #include <stdio.h>
 typedef struct types
 {
-	char c;
+	char *valid;
 	void (*f)();
 } d_type;
 int sum_them_all(const unsigned int n, ...);

@@ -1,81 +1,76 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
+#include <stdio.h>
 /**
- * print_all - print any datatype
- * @format: datatype format
- *
- * Return: none
- */
-void print_all(const char * const format, ...)
-{
-	d_type type[] = {
-		{'c', print_c},
-		{'i', print_int},
-		{'f', print_f},
-		{'s', print_s}
-	};
-	int i = 0;
-	int j = 0;
-	va_list args;
-	char *sep = "";
-
-	va_start(args, format);
-	while (format[i])
-	{
-		j = 0;
-		while (j < 4)
-		{
-			if (format[i] == type[j].c)
-			{
-				printf("%s", sep);
-				type[j].f(args);
-				sep  = ", ";
-			}
-			j = j + 1;
-		}
-		i = i + 1;
-	}
-	printf("\n");
-}
-
-/**
- * print_c - print character
- * @c: character to print
- *Return: none
- */
-void print_c(va_list c)
+  * p_char - prints characters
+  * @c: character to print
+  */
+void p_char(va_list c)
 {
 	printf("%c", va_arg(c, int));
 }
-
 /**
- * print_int - print integer
- * @i: interger to print
- * Return: none
- */
-void print_int(va_list i)
+  * p_int - prints integers
+  * @i: integer to print
+  */
+void p_int(va_list i)
 {
-	printf("%i", va_arg(i, int));
+	printf("%d", va_arg(i, int));
 }
 /**
- * print_f - print float
- * @f:  float to print
- * Return: none
- */
-void print_f(va_list f)
+  * p_float - prints floats
+  * @f: float to print
+  */
+void p_float(va_list f)
 {
 	printf("%f", va_arg(f, double));
 }
 /**
- * print_s - print string
- * @s: string to print
- * Return:none
- */
-void print_s(va_list s)
+  * p_string - prints strings
+  * @s: string to print
+  */
+void p_string(va_list s)
 {
-	char *k = va_arg(s, char *);
+	char *string;
 
-	if (k == NULL)
-		k = "(nil)";
-	printf("%s", k);
+	string = va_arg(s, char *);
+	if (string == NULL)
+		string = "(nil)";
+	printf("%s", string);
+}
+/**
+  * print_all - prints any argument passed into it
+  * @format: formats symbols in order
+  */
+void print_all(const char * const format, ...)
+{
+	unsigned int i, j;
+	char *separator;
+	va_list argp;
+	d_type valid_types[] = {
+		{"c", p_char},
+		{"i", p_int},
+		{"f", p_float},
+		{"s", p_string}
+	};
+
+	i = j = 0;
+	separator = "";
+	va_start(argp, format);
+	while (format && format[i])
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (format[i] == *valid_types[j].valid)
+			{
+				printf("%s", separator);
+				valid_types[j].f(argp);
+				separator = ", ";
+			}
+			j++;
+		}
+		i++;
+	}
+	printf("\n");
 }
