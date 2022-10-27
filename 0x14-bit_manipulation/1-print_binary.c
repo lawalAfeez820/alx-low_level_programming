@@ -1,6 +1,6 @@
 #include "main.h"
-int _find(int n, int i);
-int _mul(int i);
+int _find(unsigned long int n, int i);
+unsigned long int _mul(int i);
 
 /**
  * print_binary - print binary of a number
@@ -36,7 +36,7 @@ void print_binary(unsigned long int n)
  * Return: i
  */
 
-int _find(int n, int i)
+int _find(unsigned long int n, int i)
 {
 	if (n == 0)
 		return (0);
@@ -52,7 +52,7 @@ int _find(int n, int i)
  *@i: value
  * Return: int
  */
-int _mul(int i)
+unsigned long int _mul(int i)
 {
 	if (i == 0)
 		return (0);
